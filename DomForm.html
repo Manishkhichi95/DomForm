@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomForm</title>
+    <style>
+        div{display:flex;
+            justify-content:center;
+            align-items: center;}
+    .div2{display:block;
+     margin-bottom:40px;}
+    #btn1,#btn2{position:relative;
+            left:0px;}
+            .main{
+                margin-left:20px;
+            }
+            .main2,.main3{
+                margin-left:60px; 
+            }
+</style>
+</head>
+
+<body>
+    <div>
+    <form id="form1"  name="frm1">
+    <div class="div2 main"><label for="txtI">First Name: </label><input type="text"  id="txtI" class="txt1" required></div>
+ <div class="div2"><label for="txtII">Second Name: </label> <input type="text" id="txtII"class="txt1" required></div>
+ <div class="div2 main2"> <label for="txtIII">Age: </label> <input type="datetime-local" id="txtIII"class="txt1" required></div>
+ <div class="div2 main3">   <label for="txtIV">Select City</label>    <select name="slctOp" class="txt1" id="txtIV" >
+            <option value=""></option>
+            <option>Delhi</option>
+            <option>Uttar Pradesh</option>
+            <option>Rajasthan</option>
+            <option>Haryana</option>
+            <option>Punjab</option>
+            <option>Uttarakhand</option>
+        </select> </div>
+        
+    </form>
+    <button id="btn1" onclick="brdrRed()">Submitt</button>
+        <button id="btn2" onclick="resets()">Reset</button>
+    </div>
+    <!-- <p id="para"></p> -->
+    <script>
+        var x = document.getElementsByClassName("txt1");
+        function brdrRed() {
+            console.log(x)
+            for (let i = 0; i < x.length; i++) {
+                if(x[i].value==""){
+                x[i].style.border = "2px solid red";}
+                // console.log(x[i].value) 
+        }}
+
+        function resets() {
+            //  location.reload();
+            document.getElementById("form1").reset();
+            for (let i = 0; i < x.length; i++) {
+                x[i].style.border = "1px solid black";
+            }
+        }
+        // function validateForm() {
+        //     var y = document.forms["frm1"]["txta"].value;
+        //     var k = document.forms["frm1"]["txtb"].value;
+        //     var l = document.forms["frm1"]["txtc"].value;
+
+        //     // if (y =="" || k==""|| l=="") {
+        //     //     alert("Please fill the form");
+        //     //     return false;
+        //     // }
+        //     // console.log(y)
+        // }
+    </script>
+</body>
+
+</html>
